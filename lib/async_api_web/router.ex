@@ -25,9 +25,4 @@ defmodule AsyncApiWeb.Router do
 
     get "/", PageController, :index
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", AsyncApiWeb do
-  #   pipe_through :api
-  # end
 end
