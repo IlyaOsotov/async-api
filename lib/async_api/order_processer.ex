@@ -3,7 +3,7 @@ defmodule AsyncApi.OrderProcesser do
   alias AsyncApi.Repo
 
   def call(order) do
-    changeset = Order.changeset(order, %{content: "test_content"})
+    changeset = Order.changeset(order, %{content: "test_content", status: "accepted"})
     Repo.update(changeset)
   end
 end
