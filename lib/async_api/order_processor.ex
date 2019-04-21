@@ -1,4 +1,4 @@
-defmodule AsyncApi.OrderProcesser do
+defmodule AsyncApi.OrderProcessor do
   alias AsyncApi.Order
   alias AsyncApi.Repo
 
