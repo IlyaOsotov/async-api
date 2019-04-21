@@ -4,6 +4,7 @@ defmodule AsyncApi.OrderProcesser do
 
   def call(order) do
     changeset = Order.changeset(order, %{content: "test_content", status: "accepted"})
+    :timer.sleep(5000)
     Repo.update(changeset)
   end
 end
