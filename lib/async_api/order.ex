@@ -1,4 +1,4 @@
-defmodule Order do
+defmodule AsyncApi.Order do
   use Ecto.Schema
   import Ecto.Changeset
   alias AsyncApi.Order

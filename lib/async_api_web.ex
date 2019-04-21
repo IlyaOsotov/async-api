@@ -24,6 +24,7 @@ defmodule AsyncApiWeb do
       import Plug.Conn
       import AsyncApiWeb.Gettext
       alias AsyncApiWeb.Router.Helpers, as: Routes
+      alias AsyncApi.Repo
     end
   end
 
