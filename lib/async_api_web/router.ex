@@ -13,6 +13,13 @@ defmodule AsyncApiWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api/v1", AsyncApiWeb.Api do
+    pipe_through :api
+
+    get "/orders/:id", OrderController, :show
+    post "/orders/", OrderController, :create
+  end
+
   scope "/", AsyncApiWeb do
     pipe_through :browser
 
