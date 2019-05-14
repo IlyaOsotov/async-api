@@ -3,6 +3,8 @@ defmodule AsyncApi.Order do
   import Ecto.Changeset
   alias AsyncApi.Order
 
+  @derive { Jason.Encoder, only: [:id, :content, :status] }
+
   schema "orders" do
     field :content, :string
     field :status, :string
