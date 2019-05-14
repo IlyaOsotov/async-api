@@ -7,7 +7,7 @@ defmodule AsyncApiWeb.Api.OrderController do
   def create(conn, _params) do
     changeset = Order.changeset(%Order{}, %{status: "pending"})
     {_status, order} = Repo.insert(changeset)
-    spawn(KafkaProducer, :call, [order])
+    spawn(KafkaProducer, :send_new, [order])
     spawn(OrderProcessor, :call, [order])
     render(conn, "create.json", order: order)
   end
